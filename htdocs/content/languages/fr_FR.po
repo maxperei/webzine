@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 4.9.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2018-09-04 05:17:01+0000\n"
+"PO-Revision-Date: 2018-10-02 11:16:28+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -35,6 +35,10 @@ msgstr " "
 #: wp-includes/class-wp-locale.php:220
 msgid "number_format_decimal_point"
 msgstr ","
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:272
+msgid "The offset number requested is larger than or equal to the number of available revisions."
+msgstr "Le nombre de valeurs de décalage demandé est supérieur ou égal au nombre de révisions disponibles."
 
 #: wp-includes/user.php:3395
 msgid "Unable to send personal data export confirmation email."
@@ -581,7 +585,7 @@ msgstr "%s a pris la main et personnalise actuellement."
 
 #: wp-includes/script-loader.php:573
 msgid "Looks like something&#8217;s gone wrong. Wait a couple seconds, and then try again."
-msgstr "Il semble que quelque chose se passe mal. Attendez deux secondes puis essayez à nouveau."
+msgstr "Il semble que quelque chose se passe mal. Attendez deux secondes puis veuillez réessayer."
 
 #: wp-includes/class-wp-customize-manager.php:4161
 msgid "Take over"
@@ -1547,7 +1551,7 @@ msgstr "Aucune modification enregistrée, il n’y a donc rien à mettre à la c
 
 #: wp-includes/class-wp-customize-manager.php:3007
 msgid "There was an authentication problem. Please reload and try again."
-msgstr "Il y a eu un problème d’authentification. Veuillez recharger et essayer à nouveau."
+msgstr "Il y a eu un problème d’authentification. Veuillez recharger et réessayer."
 
 #. translators: %s: number of invalid settings
 #: wp-includes/class-wp-customize-manager.php:2707
@@ -1675,7 +1679,7 @@ msgstr "Assister à un évènement  à venir proche de chez vous."
 
 #: wp-includes/script-loader.php:1191
 msgid "An error occurred. Please try again."
-msgstr "Une erreur est survenue. Veuillez essayer à nouveau."
+msgstr "Une erreur est survenue. Veuillez réessayer plus tard."
 
 #: wp-includes/script-loader.php:1190
 msgid "Enter your closest city to find nearby events."
@@ -1980,10 +1984,12 @@ msgid "Limit result set to terms with one or more specific slugs."
 msgstr "Limiter le jeu de résultats aux termes ayant un ou plusieurs identifiants spécifiques."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:329
+#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:274
 msgid "The page number requested is larger than the number of pages available."
 msgstr "Le numéro de page demandé est plus grand que le nombre de pages disponibles."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:157
+#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:207
 msgid "You need to define an include parameter to order by include."
 msgstr "Vous devez définir un paramètre d’inclusion pour ordonner avec <em lang=\"en\">include</em>."
 
@@ -2720,7 +2726,7 @@ msgstr "Le champ texte mot de passe ne peut être vide."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1101
 msgid "Username contains invalid characters."
-msgstr "Le nom d’utilisateur contient des caractères non valides."
+msgstr "L’identifiant contient des caractères non valides."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:164
 #: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:485
@@ -2798,7 +2804,7 @@ msgid "Terms do not support trashing. Set '%s' to delete."
 msgstr "Les termes ne peuvent pas être mis à la corbeille. Utilisez le paramètre « %s » pour supprimer."
 
 #. translators: %s: force=true
-#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:292
+#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:400
 msgid "Revisions do not support trashing. Set '%s' to delete."
 msgstr "Les révisions ne peuvent pas être mises à la corbeille. Utilisez le paramètre « %s » pour supprimer."
 
@@ -2981,7 +2987,7 @@ msgstr "Désolé, vous n’avez pas l’autorisation de supprimer cet utilisateu
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:627
 msgid "Username isn't editable."
-msgstr "Le nom d’utilisateur n’est pas modifiable."
+msgstr "L’identifiant n’est pas modifiable."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:583
 msgid "Sorry, you are not allowed to edit roles of this user."
@@ -3076,6 +3082,7 @@ msgstr "Limiter le jeu de résultats aux éléments ayant un ID parent particuli
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1405
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2331
+#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:708
 #: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:924
 #: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1338
 msgid "Offset the result set by a specific number of items."
@@ -3147,7 +3154,7 @@ msgid "The excerpt for the object."
 msgstr "L’extrait pour l’objet."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2025
-#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:460
+#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:603
 msgid "The ID for the author of the object."
 msgstr "L’ID pour l’auteur de l’objet."
 
@@ -3176,17 +3183,17 @@ msgid "A named status for the object."
 msgstr "Un état nommé pour l’objet."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1878
-#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:504
+#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:647
 msgid "An alphanumeric identifier for the object unique to its type."
 msgstr "Un identificateur alphanumérique pour l’objet unique de son type."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1871
-#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:493
+#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:636
 msgid "The date the object was last modified, as GMT."
 msgstr "La dernière date GMT à laquelle l’objet a été modifié."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1864
-#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:487
+#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:630
 msgid "The date the object was last modified, in the site's timezone."
 msgstr "La date de dernière modification de l’objet, dans le fuseau horaire du site."
 
@@ -3195,7 +3202,7 @@ msgid "GUID for the object, transformed for display."
 msgstr "GUID pour l’objet, transformé pour l’affichage."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1837
-#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:477
+#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:620
 msgid "GUID for the object, as it exists in the database."
 msgstr "GUID pour cet objet, tel qu’il existe dans la base de données."
 
@@ -3205,13 +3212,13 @@ msgstr "L’identifiant unique global pour cet objet."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1270
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1825
-#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:471
+#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:614
 msgid "The date the object was published, as GMT."
 msgstr "La date à laquelle l’objet a été publié, au format GMT."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1264
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1819
-#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:465
+#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:608
 msgid "The date the object was published, in the site's timezone."
 msgstr "La date à laquelle l’objet a été publié, dans le fuseau horaire du site."
 
@@ -3259,6 +3266,7 @@ msgid "Incorrect post password."
 msgstr "Mot de passe de l’article incorrect."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:152
+#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:202
 msgid "You need to define a search term to order by relevance."
 msgstr "Vous devez définir un terme à rechercher pour ordonner par pertinence."
 
@@ -3361,12 +3369,14 @@ msgstr "Limiter le jeu de résultats aux commentaires ayant un ID parent spécif
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1420
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2343
+#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:720
 #: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1351
 msgid "Sort collection by object attribute."
 msgstr "Trier la collection par attribut d’objet."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1410
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2336
+#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:713
 #: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:930
 #: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1344
 msgid "Order sort attribute ascending or descending."
@@ -3374,6 +3384,7 @@ msgstr "Le paramètre order trie les attributs dans l’ordre croissant ou décr
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1396
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2315
+#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:699
 #: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:914
 #: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1329
 msgid "Limit result set to specific IDs."
@@ -3381,6 +3392,7 @@ msgstr "Limiter le groupe de résultats aux ID spécifiés."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1387
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2306
+#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:690
 #: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:905
 #: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1320
 msgid "Ensure result set excludes specific IDs."
@@ -3432,7 +3444,7 @@ msgstr "L’ID de l’objet article associé."
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1909
 #: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:71
 #: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:87
-#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:499
+#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:642
 msgid "The ID for the parent of the object."
 msgstr "L’ID du parent de l’objet."
 
@@ -3485,7 +3497,7 @@ msgstr "L’ID de l’objet user, si l’auteur était un utilisateur."
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:89
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1851
 #: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:91
-#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:482
+#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:625
 msgid "Unique identifier for the object."
 msgstr "Identifiant unique de l’objet."
 
@@ -3755,7 +3767,7 @@ msgstr "Précédent"
 
 #: wp-includes/general-template.php:396 wp-login.php:590 wp-login.php:1027
 msgid "Username or Email Address"
-msgstr "Nom d’utilisateur ou adresse e-mail"
+msgstr "Identifiant ou adresse e-mail"
 
 #. translators: %s: "Search WordPress.org themes" button
 #: wp-includes/customize/class-wp-customize-themes-section.php:91
@@ -4592,7 +4604,7 @@ msgstr "Valider"
 
 #: wp-includes/pluggable.php:537
 msgid "<strong>ERROR</strong>: Invalid username, email address or incorrect password."
-msgstr "<strong>ERREUR</strong> : Nom d’utilisateur, adresse de messagerie ou mot de passe non valide."
+msgstr "<strong>ERREUR</strong> : identifiant, adresse de messagerie ou mot de passe non valide."
 
 #. translators: 1: blog name, 2: separator(raquo), 3: term name, 4: taxonomy
 #. singular name
@@ -4717,7 +4729,7 @@ msgstr "Erreur lors de la soumission du commentaire"
 
 #: wp-includes/user.php:2360
 msgid "<strong>ERROR</strong>: Sorry, that username is not allowed."
-msgstr "<strong>ERREUR</strong> : désolé mais ce nom d’utilisateur n’est pas autorisé."
+msgstr "<strong>ERREUR</strong> : désolé mais cet identifiant n’est pas autorisé."
 
 #: wp-includes/rest-api/class-wp-rest-request.php:861
 msgid "Invalid parameter."
@@ -4986,7 +4998,7 @@ msgstr "Confirmez-vous avoir saisi le bon nom d’hôte (hostname) ?"
 
 #: wp-includes/wp-db.php:1587
 msgid "Are you sure you have the correct username and password?"
-msgstr "Confirmez-vous utiliser le bon nom d’utilisateur et le bon mot de passe ?"
+msgstr "Confirmez-vous utiliser le bon identifiant et le bon mot de passe ?"
 
 #. translators: 1: wp-config.php. 2: database host
 #: wp-includes/wp-db.php:1581
@@ -5001,7 +5013,7 @@ msgstr "Si vous ne savez pas comment configurer une base de données, vous devri
 #. translators: %s: database name
 #: wp-includes/wp-db.php:1053
 msgid "On some systems the name of your database is prefixed with your username, so it would be like <code>username_%1$s</code>. Could that be the problem?"
-msgstr "Dans certaines configurations système, le nom de la base de données a pour préfixe votre nom d’utilisateur, cela devrait ressembler à <code>nom_d_utilisateur_%1$s</code>. Cela pourrait-il être le problème ?"
+msgstr "Dans certaines configurations système, le nom de la base de données a pour préfixe votre identifiant, cela devrait ressembler à <code>identifiant_%1$s</code>. Cela pourrait-il être le problème ?"
 
 #. translators: 1: database user, 2: database name
 #: wp-includes/wp-db.php:1046
@@ -5015,7 +5027,7 @@ msgstr "Confirmez-vous que cela existe ?"
 #. translators: %s: database name
 #: wp-includes/wp-db.php:1037
 msgid "We were able to connect to the database server (which means your username and password is okay) but not able to select the %s database."
-msgstr "Nous avons pu nous connecter au serveur de la base données (ce qui signifie que votre nom d’utilisateur et mot de passe sont bons), mais nous n’avons pas pu sélectionner la base de données %s."
+msgstr "Nous avons pu nous connecter au serveur de la base données (ce qui signifie que votre identifiant et mot de passe sont bons), mais nous n’avons pas pu sélectionner la base de données %s."
 
 #: wp-includes/wp-db.php:1033
 msgid "Can&#8217;t select database"
@@ -5040,7 +5052,7 @@ msgstr "<strong>ERREUR</strong> : ce mot de passe ne correspond pas à l’iden
 
 #: wp-includes/user.php:147
 msgid "<strong>ERROR</strong>: Invalid username."
-msgstr "<strong>ERREUR</strong> : Nom d’utilisateur non valide."
+msgstr "<strong>ERREUR</strong> : identifiant non valide."
 
 #: wp-includes/taxonomy.php:523
 msgid "Categories list"
@@ -5169,11 +5181,11 @@ msgstr "Les noms de sites ne peuvent contenir que des minuscules (a-z) et des ch
 #: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1108
 #: wp-includes/user.php:1499
 msgid "Sorry, that username is not allowed."
-msgstr "Désolé, ce nom d’utilisateur n’est pas autorisé."
+msgstr "Désolé, cet identifiant n’est pas autorisé."
 
 #: wp-includes/ms-functions.php:445
 msgid "Usernames can only contain lowercase letters (a-z) and numbers."
-msgstr "Les noms d’utilisateurs ne peuvent contenir que des minuscules (a-z) et des chiffres."
+msgstr "Les identifiants ne peuvent contenir que des minuscules (a-z) et des chiffres."
 
 #. translators: playlist item title
 #: wp-includes/media.php:1832 wp-includes/media.php:1847
@@ -8357,7 +8369,7 @@ msgstr "Mettre à jour la galerie"
 
 #: wp-includes/user.php:2354
 msgid "<strong>ERROR</strong>: This username is already registered. Please choose another one."
-msgstr "<strong>ERREUR</strong> : cet identifiant est déjà utilisé. Merci d’en choisir un autre."
+msgstr "<strong>ERREUR</strong> : cet identifiant est déjà utilisé. Veuillez en choisir un autre."
 
 #: wp-includes/ms-functions.php:471
 msgid "Please enter a valid email address."
@@ -8828,7 +8840,7 @@ msgstr "Désolé, vous n’avez pas l’autorisation de créer des contenus prot
 #: wp-includes/class-wp-xmlrpc-server.php:1715
 #: wp-includes/class-wp-xmlrpc-server.php:4863
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:825
-#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:312
+#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:420
 msgid "The post cannot be deleted."
 msgstr "Cet article ne peut pas être supprimé."
 
@@ -10253,7 +10265,7 @@ msgstr "Si vous n’activez pas votre compte sous deux jours, vous devrez vous r
 
 #: wp-signup.php:611
 msgid "But, before you can start using your new username, <strong>you must activate it</strong>."
-msgstr "Mais, avant d&#8217;utiliser votre nouvel identifiant, <strong>vous devez l&#8217;activer</strong>."
+msgstr "Mais, avant d’utiliser votre nouvel identifiant, <strong>vous devez l’activer</strong>."
 
 #. translators: %s: username
 #: wp-signup.php:610
@@ -10267,7 +10279,7 @@ msgstr "Suivant"
 
 #: wp-signup.php:560
 msgid "Just a username, please."
-msgstr "Juste l’identifiant, s’il vous plaît."
+msgstr "Uniquement l’identifiant, s’il vous plaît."
 
 #. translators: %s: name of the network
 #: wp-signup.php:540
@@ -10426,7 +10438,7 @@ msgstr "<strong>ERREUR</strong> : le champ du mot de passe est vide."
 
 #: wp-includes/user.php:135
 msgid "<strong>ERROR</strong>: The username field is empty."
-msgstr "<strong>ERREUR</strong> : le champ du nom d’utilisateur est vide."
+msgstr "<strong>ERREUR</strong> : le champ de l’identifiant est vide."
 
 #: wp-includes/class-wp-theme.php:231
 msgid "Stylesheet is missing."
@@ -10549,7 +10561,7 @@ msgstr "Une erreur est survenue lors du téléversement. Veuillez réessayer plu
 
 #: wp-includes/script-loader.php:290
 msgid "This file is empty. Please try another."
-msgstr "Le fichier est vide. Merci d’en essayer un autre."
+msgstr "Le fichier est vide. Veuillez en essayer un autre."
 
 #: wp-includes/script-loader.php:288
 msgid "You have attempted to queue too many files."

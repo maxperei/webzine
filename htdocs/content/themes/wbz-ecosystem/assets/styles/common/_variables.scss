@@ -1,0 +1,11 @@
+/** Import Bootstrap functions */
+@import "../../components/bootstrap/scss/functions";
+
+$primary: #dfdaf1;
+$theme-colors: (
+  primary: $primary
+);
+
+/** Bootstrap navbar fix (https://git.io/fADqW) */
+$navbar-dark-toggler-icon-bg: none;
+$navbar-light-toggler-icon-bg: none;

@@ -1,0 +1,13 @@
+.wrap {
+  @extend .container;
+}
+.content {
+  @extend .d-flex;
+  .main {
+    width: 100%;
+  }
+  .sidebar {
+    @extend .col-4;
+  }
+}
+

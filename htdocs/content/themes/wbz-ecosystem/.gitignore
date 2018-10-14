@@ -1,0 +1,12 @@
+# Miscellaneous
+.DS_Store
+Thumbs.db
+.idea/
+
+# Theme
+node_modules/
+vendor/
+composer.lock
+package-lock.json
+assets/components/
+dist/

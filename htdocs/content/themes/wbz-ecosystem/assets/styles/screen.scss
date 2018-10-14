@@ -1,0 +1,153 @@
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(//fonts.gstatic.com/s/opensans/v10/cJZKeOuBrn4kERxqtaUH3ZBw1xU1rKptJj_0jans920.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+body{
+  background-color: #002832;
+  margin: 0;
+  padding: 0;
+}
+
+#app{
+  width: 100%;
+  padding: 6em 0;
+  overflow: hidden;
+}
+
+.wrapper{
+  width: 960px;
+  margin: 0 auto;
+}
+
+h1{
+  color: #f5f5f5;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 44px;
+  font-size: 2.75em;
+  line-height: 100%;
+  margin: 0.5em 0;
+}
+
+h2{
+  color: #004c59;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 326px;
+  font-size: 1.625em;
+  line-height: 100%;
+  margin: 0 0 1em 0;
+}
+
+h3{
+  color: #004c59;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-size: 1em;
+  line-height: 100%;
+  margin: 0 0 1em 0;
+}
+
+p{
+  font-family: 'Open Sans', sans-serif;
+  color: #666666;
+  font-size: 16px;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+a, a:link, a:active, a:visited{
+  font-family: 'Open Sans', sans-serif;
+  color: #666666;
+  font-size: 14px;
+  font-size: 0.875em;
+  line-height: 1.5em;
+  text-decoration: none;
+}
+
+a:hover{
+  color: #00b49c;
+}
+
+.head{
+  width: 960px;
+  text-align: center;
+  margin-bottom: 3em;
+}
+
+.head p{
+  color: #f5f5f5;
+}
+
+#logo{
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+.frame{
+  width: 960px;
+  background-color: #f5f5f5;
+}
+
+#get-started{
+  width: 640px;
+  float: left;
+  background-color: #ffffff;
+}
+
+#get-started a, #get-started a:link, #get-started a:active, #get-started a:visited{
+  display: inline-block;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  font-size: 1.125em;
+  line-height: 100%;
+  background-color: #00b49c;
+  color: #ffffff;
+  padding: 0.75em 1em;
+  border: 1px solid #00b49c;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  text-decoration: none;
+  -webkit-transition: background-color 0.3s ease, color 0.3s ease;
+  -moz-transition: background-color 0.3s ease, color 0.3s ease;
+  -o-transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#get-started a:hover{
+  background-color: #ffffff;
+  color: #00b49c;
+}
+
+#links{
+  width: 320px;
+  float: left;
+}
+
+#links ul{
+  margin: 0 0 0 1em;
+  padding: 0;
+}
+
+.container{
+  padding: 3.125em;
+}

@@ -1,0 +1,21 @@
+.banner {
+  @extend .mb-3;
+  background: gray('100');
+  border-bottom: 1px solid theme-color('primary');
+  .nav {
+    @extend .d-flex;
+    .menu-item {
+      @extend .navbar, .nav-item;
+      &:first-child {
+        @extend .navbar-brand, .mr-auto, .py-0;
+        display: inherit;
+        a:hover {
+          text-decoration: underline;
+        }
+      }
+      a {
+        @extend .nav-link;
+      }
+    }
+  }
+}
