@@ -3,8 +3,8 @@ aside {
   ul {
     padding: 0;
     list-style: none;
-    > li {
-      > a {
+    li {
+      a {
         // TODO implement link component
         @extend .mb-1;
         display: block;
@@ -24,11 +24,44 @@ aside {
   ol {
     padding-inline-start: 0;
     list-style-type: none;
-    li {
+    > li {
       counter-increment: step-counter;
+      padding-right: 1px;
+      &:hover {
+        border-right: 1px solid theme-color('primary');
+      }
       &:before {
         content: counter(step-counter)".";
+        font-size: .5rem;
+        font-weight: lighter;
         margin-right: .5rem;
+      }
+      > ul {
+        padding-left: 1rem;
+        display: none;
+        li {
+          font-size: $font-size-sm;
+          font-weight: $font-weight-light;
+          /*&:first-of-type::before {
+            content: "📀";
+          }
+          &:nth-of-type(2)::before {
+            content: "📅";
+          }
+          &:last-of-type::before {
+            content: "📡";
+          }*/
+        }
+      }
+      a {
+        font-size: $font-size-sm;
+        font-weight: $font-weight-light;
+        border: none;
+        margin: 0;
+        display: initial;
+        &:before {
+          content: none;
+        }
       }
     }
   }

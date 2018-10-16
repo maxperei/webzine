@@ -23,14 +23,36 @@ function toggleText(t, p, b) {
 
 let reformat = [];
 let i = 0;
-let title = $('.rssSummary p:first-of-type');
+let list = $('.rssSummary p:first-of-type');
 let content = $('.rssSummary p:last-of-type');
 
 playlists.forEach(function (playlist) {
+    var j = 1;
     reformat[i] = '';
-    reformat[i] += '<ol>';
+    reformat[i] += '<ol class="tracklist">';
     playlist.forEach(function (track) {
-        reformat[i] += '<li>' + track.replace(/^\d+\/ /, '') + '</li>';
+        var meta, artist, label, album, year;
+        meta = track.match(/\(([^)]+)\)/g).toString().replace(/\(|\)/g, '');
+        track = track.split('(')[0].replace(/^\d+\/ /, '');
+        artist = track.split(' - ')[0];
+        track = track.split(' - ')[1];
+        album = meta.split('/')[0];
+        label = meta.split('/')[1];
+        label = meta.match(/<\s*a[^>]*>(.*?)<\/a>/g) || label;
+        year = meta.split('/').pop();
+
+        // TODO Refacto
+        reformat[i] += '<li class="track track'+j+'">' + track;
+            reformat[i] += '<ul class="track__metadata">';
+            reformat[i] +=
+                '<li class="track__artist">'+artist+'</li>'+
+                '<li class="track__album">'+album+'</li>'+
+                '<li class="track__year">'+year+'</li>'+
+                '<li class="track__label">'+label+'</li>';
+            reformat[i] += '</ul>';
+        reformat[i] += '</li>';
+
+        j++;
     });
     reformat[i] += '</ol>';
     i++;
@@ -41,14 +63,24 @@ content.each(function (k, c) {
     $(c).html(reformat[k]);
 });
 
-title.each(function (k, t) {
-    $(t).children('b').text($(t).text().replace(' ', '').replace(/\=/g, '+'));
-    $(t).click(function (e) {
+list.each(function (k, l) {
+    $(l).children('b').text($(l).text().replace(' ', '').replace(/\=/g, '+'));
+    $(l).click(function (e) {
         e.preventDefault();
-        let p = $(t).siblings('p');
-        let b = $(t).children('b');
+        let p = $(l).siblings('p');
+        let b = $(l).children('b');
         p.slideToggle(150, function () {
-            toggleText(t, p, b);
+            toggleText(l, p, b);
         });
     })
+});
+
+let track = $('.track');
+
+track.each(function (k, t) {
+    $(t).hover(function () {
+        $(t).children('ul').stop().slideDown(150);
+    }, function () {
+        $(t).children('ul').stop().slideUp(150);
+    });
 });
