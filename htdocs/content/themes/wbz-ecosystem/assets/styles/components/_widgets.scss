@@ -67,7 +67,6 @@ aside {
   }
   figure {
     img {
-      @extend .img-thumbnail;
       object-fit: cover;
       max-width: 540px;
       width: 100%;
@@ -80,5 +79,17 @@ aside {
     &:hover {
       text-decoration: underline;
     }
+  }
+  iframe {
+    height: 60px;
+    position: relative;
+    top: -16px;
+  }
+  p > span {
+    font: {
+      size: $font-size-sm;
+      weight: $font-weight-light;
+    }
+    text-align: justify;
   }
 }

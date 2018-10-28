@@ -7,6 +7,7 @@ module.exports = {
     entry: {
         theme: path.join(__dirname, 'assets/js/theme.js'),
         widget: path.join(__dirname, 'assets/js/widget.js'),
+        admin: path.join(__dirname, 'assets/js/admin.js'),
     },
     output: {
         path: path.join(__dirname, 'dist/js'),

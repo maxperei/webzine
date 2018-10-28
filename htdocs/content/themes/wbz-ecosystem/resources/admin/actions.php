@@ -28,3 +28,7 @@ Action::add('wp_footer', function() {
         <?php
     endif;
 });
+
+Action::add('widgets_init', function() {
+    unregister_widget('WP_Widget_RSS');
+});
