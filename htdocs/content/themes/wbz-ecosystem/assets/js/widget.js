@@ -7,14 +7,14 @@ let texts = [];
  * Handle various texts
  **/
 (function () {
-    $('.rssBase > p').each(function () {
+    $('.rss-base > p').each(function () {
         if ($(this).text() === '') {
             $(this).remove();
         } else if (!$(this).text().includes('Playlist')) {
             playlists.push($(this).html().split('<br>'));
         }
     });
-    $('.rssContent').each(function () {
+    $('.rss-content').each(function () {
         texts.push($(this).html().split('['));
     });
 })();
@@ -25,9 +25,11 @@ function toggleText(t, p, b) {
     return p.is(':visible') ? b.text(minus) : b.text(plus);
 }
 
-let section = $('.rssBase > p:first-of-type').wrapInner('<b></b>');
-let list = $('.rssBase > p:last-of-type');
-let contents = $('.rssContent');
+let section = $('.rss-base > p:first-of-type').wrapInner('<b></b>');
+let list = $('.rss-base > p:last-of-type');
+$(list).hide();
+
+let contents = $('.rss-content');
 
 let format = [];
 let i = 0;
@@ -37,9 +39,8 @@ texts.forEach(function (text) {
     text.forEach(function (t) {
         t = t.split(']');
         if (t[0] !== '…') {
-            format[i] += '<p class="author"><b>'+t[0]+'</b>';
-            format[i] += '<span>'+t[1]+'</span>';
-            format[i] += '</p>';
+            format[i] += '<h4 class="rss-author">'+t[0]+'</h4>';
+            format[i] += '<p class="rss-text">'+t[1].replace(/\./g, ".<br/>")+'</p>';
         }
     });
     i++;
@@ -55,7 +56,7 @@ i = 0;
 playlists.forEach(function (playlist) {
     var j = 1;
     format[i] = '';
-    format[i] += '<ol class="tracklist">';
+    format[i] += '<ol class="rss-tracklist">';
     playlist.forEach(function (track) {
         var meta, artist, label, album, year;
         meta = track.match(/\(([^)]+)\)/g).toString().replace(/\(|\)/g, '');
@@ -68,13 +69,13 @@ playlists.forEach(function (playlist) {
         year = meta.split('/').pop();
 
         // TODO Refacto
-        format[i] += '<li class="track track'+j+'">' + track;
-            format[i] += '<ul class="track__metadata">';
+        format[i] += '<li class="rss-track track'+j+'">' + track;
+            format[i] += '<ul class="rss-track__metadata">';
             format[i] +=
-                '<li class="track__artist">'+artist+'</li>'+
-                '<li class="track__album">'+album+'</li>'+
-                '<li class="track__year">'+year+'</li>'+
-                '<li class="track__label">'+label+'</li>';
+                '<li class="rss-track__artist">'+artist+'</li>'+
+                '<li class="rss-track__album">'+album+'</li>'+
+                '<li class="rss-track__year">'+year+'</li>'+
+                '<li class="rss-track__label">'+label+'</li>';
             format[i] += '</ul>';
         format[i] += '</li>';
 
@@ -83,9 +84,6 @@ playlists.forEach(function (playlist) {
     format[i] += '</ol>';
     i++;
 });
-
-$(list).hide();
-$('.author > span').hide();
 
 list.each(function (k, c) {
     $(c).html(format[k]);
@@ -104,17 +102,13 @@ section.each(function (k, l) {
     })
 });
 
-$('.author').each(function (k, a) {
-   $(a).click(function (e) {
-       e.preventDefault();
-       let c = $(a).children('span');
-       c.slideToggle(150);
-   })
+$('.rss-author').click(function () {
+    $(this).toggleClass('rss-author--open').next().slideToggle(150);
+    $('.rss-author').not($(this)).removeClass('rss-author--open');
+    $('.rss-text').not($(this).next()).slideUp(150);
 });
 
-let track = $('.track');
-
-track.each(function (k, t) {
+$('.rss-track').each(function (k, t) {
     $(t).hover(function () {
         $(t).children('ul').stop().slideDown(150);
     }, function () {

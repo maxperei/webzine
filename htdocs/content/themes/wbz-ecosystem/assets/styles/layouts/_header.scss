@@ -1,6 +1,5 @@
 .banner {
   @extend .mb-3;
-  background: gray('100');
   border-bottom: 1px solid theme-color('primary');
   .nav {
     @extend .d-flex;

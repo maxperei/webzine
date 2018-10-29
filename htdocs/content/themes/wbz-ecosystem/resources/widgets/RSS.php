@@ -227,9 +227,9 @@ class RSS_Widget extends WP_Widget
             }
 
             $summary = strip_tags($base, $tags);
-            $summary = '<div class="rssSummary">'.
-                           '<div class="rssBase">'.$summary.'</div>'.
-                           '<div class="rssContent">'.esc_html(strip_tags($content)).'</div>'.
+            $summary = '<div class="rss-summary">'.
+                           '<div class="rss-base">'.$summary.'</div>'.
+                           '<div class="rss-content">'.esc_html(strip_tags($content)).'</div>'.
                         '</div>';
 
             /* Data assignation to loop through template */

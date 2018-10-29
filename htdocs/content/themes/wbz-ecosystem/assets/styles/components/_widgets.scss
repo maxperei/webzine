@@ -1,4 +1,4 @@
-aside {
+aside.sidebar {
   h2 { }
   ul {
     padding: 0;
@@ -31,7 +31,7 @@ aside {
         border-right: 1px solid theme-color('primary');
       }
       &:before {
-        content: counter(step-counter)".";
+        content: counter(step-counter) ".";
         font-size: .5rem;
         font-weight: lighter;
         margin-right: .5rem;
@@ -85,11 +85,35 @@ aside {
     position: relative;
     top: -16px;
   }
-  p > span {
-    font: {
-      size: $font-size-sm;
-      weight: $font-weight-light;
+  .rss-summary {
+    .rss-base {
+
     }
-    text-align: justify;
+    .rss-content {
+      .rss-author {
+        font: {
+          size: $font-size-base;
+        }
+        cursor: pointer;
+        &:after {
+          content: '+';
+          float: right;
+          font: {
+
+          }
+        }
+        &--open:after {
+          content: '-';
+          float: right;
+        }
+      }
+      .rss-text {
+        display: none;
+        font: {
+          size: $font-size-sm;
+          weight: $font-weight-light;
+        }
+      }
+    }
   }
 }
