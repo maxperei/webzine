@@ -1,76 +1,167 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Themosis Theme\n"
-"POT-Creation-Date: 2016-06-02 10:29+0100\n"
-"PO-Revision-Date: 2016-06-02 10:36+0100\n"
-"Last-Translator: Julien Lambé <julien@themosis.com>\n"
+"Project-Id-Version: Wbz Ecosystem\n"
+"POT-Creation-Date: 2018-11-01 15:50+0100\n"
+"PO-Revision-Date: 2018-11-01 15:51+0100\n"
+"Last-Translator: Max Perei <hello@maxperei.info>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 2.0.6\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_x;esc_html__;esc_html_e;"
 "_n;_ex\n"
-"X-Poedit-Basepath: ../\n"
-"X-Poedit-SearchPath-0: resources\n"
-"X-Poedit-SearchPath-1: resources/admin\n"
-"X-Poedit-SearchPath-2: resources/views\n"
+"X-Poedit-Basepath: ../resources\n"
+"X-Poedit-SearchPath-0: .\n"
 
-#: resources/config/menus.config.php:12
-msgid "Header navigation"
-msgstr ""
+#: views/404.blade.php:8
+msgid "Sorry, but the page you were trying to view does not exist."
+msgstr "Désolé, mais la page que vous essayez d'afficher n'existe pas."
 
-#: resources/config/sidebars.config.php:11
-msgid "First sidebar"
-msgstr ""
+#: views/index.blade.php:8 views/search.blade.php:8
+msgid "Sorry, no results were found."
+msgstr "Désolé, aucun résultat n’a été trouvé."
 
-#: resources/config/sidebars.config.php:13
-msgid "Area of first sidebar"
-msgstr ""
+#: views/partials/comments.blade.php:16
+msgid "&larr; Older comments"
+msgstr "&laquo; Anciens commentaires"
 
-#: resources/views/welcome.php:174
-msgid "Congratulations!"
-msgstr "Félicitations!"
+#: views/partials/comments.blade.php:19
+msgid "Newer comments &rarr;"
+msgstr "Nouveaux commentaires &raquo;"
 
-#: resources/views/welcome.php:175
-msgid "The Themosis framework is running."
-msgstr "Le framework Themosis est installé correctement."
+#: views/partials/comments.blade.php:28
+msgid "Comments are closed."
+msgstr "Les commentaires sont fermés."
 
-#: resources/views/welcome.php:180
+#: views/partials/content-page.blade.php:2
+#: views/partials/content-single-post.blade.php:10
+msgid "Pages:"
+msgstr "Pages :"
+
+#: views/sandbox.blade.php:28
 msgid "Get started:"
 msgstr "Démarrer:"
 
-#: resources/views/welcome.php:181
+#: views/sandbox.blade.php:29
 msgid ""
 "Check the documentation and build your next WordPress website/application."
 msgstr ""
 "Parcourez la documentation et développez votre prochain projet WordPress."
 
-#: resources/views/welcome.php:182
-msgid "Themosis framework documentation"
-msgstr "Documentation du framework Themosis"
-
-#: resources/views/welcome.php:182
+#: views/sandbox.blade.php:30
 msgid "View documentation"
 msgstr "Voir la documentation"
 
-#: resources/views/welcome.php:187
+#: views/sandbox.blade.php:35
 msgid "Links:"
-msgstr "Liens"
+msgstr "Liens :"
 
-#: resources/views/pages/index.twig:11
-msgid "Title"
+#: config/menus.config.php:12
+msgid "Primary navigation"
+msgstr "Navigation principale"
+
+#: config/sidebars.config.php:11
+msgid "Default sidebar"
+msgstr "Barre latérale par défaut"
+
+#: config/sidebars.config.php:13
+msgid "Area of default sidebar"
+msgstr "Zone de barre latérale par défaut"
+
+#: config/sidebars.config.php:20
+msgid "Footer sidebar"
+msgstr "Barre latérale de pied de page"
+
+#: config/sidebars.config.php:22
+msgid "Area of footer sidebar"
+msgstr "Zone de barre latérale du pied de page"
+
+#: controllers/App.php:19
+msgid "Latest Posts"
+msgstr "Articles récents"
+
+#: controllers/App.php:25
+#, php-format
+msgid "Search Results for %s"
+msgstr "Résultats de recherche pour %s"
+
+#: controllers/App.php:28
+msgid "Not Found"
+msgstr "Page non trouvée"
+
+#: widgets/RSS.php:16
+msgid "Entries from syndicate Déphasage RSS feed"
+msgstr "Les entrées depuis le flux RSS de Déphasage (syndiqué)"
+
+#: widgets/RSS.php:22
+msgid "RSS"
+msgstr "Flux"
+
+#: widgets/RSS.php:117
+msgid "Unknown Feed"
+msgstr "Flux inconnu"
+
+#: widgets/RSS.php:165 widgets/RSS.php:275 widgets/RSS.php:304
+msgid "RSS Error:"
+msgstr "Erreur RSS :"
+
+#: widgets/RSS.php:183
+msgid ""
+"An error has occurred, which probably means the feed is down. Try again "
+"later."
 msgstr ""
+"Une erreur est survenue, le flux est probablement indisponible. Veuillez "
+"réessayer plus tard."
 
-#: resources/views/pages/index.twig:12
-msgid "Post"
-msgstr ""
+#: widgets/RSS.php:197
+msgid "Untitled"
+msgstr "Sans titre"
 
-#: resources/views/hello.scout.php:6
-msgid "Hello"
-msgstr "Bonjour"
+#: widgets/RSS.php:312
+msgid "Enter the RSS feed URL here:"
+msgstr "Saisissez l’URL du flux RSS ici :"
 
-#: resources/views/hellob.blade.php:6
-msgid "Hello from Blade"
-msgstr "Bonjour depuis Blade"
+#: widgets/RSS.php:321
+msgid "Give the feed a title (optional):"
+msgstr "Donnez un titre au flux (facultatif) :"
+
+#: widgets/RSS.php:330
+msgid "How many items would you like to display?"
+msgstr "Combien d’entrées souhaitez-vous afficher ?"
+
+#: widgets/RSS.php:340
+msgid "Which item would you like to display?"
+msgstr "Quel élément souhaitez-vous afficher en particulier ?"
+
+#: widgets/RSS.php:353
+msgid "Display item image?"
+msgstr "Afficher l’image de l’élément ?"
+
+#: widgets/RSS.php:359
+msgid "Display item player?"
+msgstr "Afficher le player de l’élément ?"
+
+#: widgets/RSS.php:365
+msgid "Display item playlist?"
+msgstr "Afficher la playlist de l’élément ?"
+
+#: widgets/RSS.php:371
+msgid "Display item content?"
+msgstr "Afficher le contenu de l’élément ?"
+
+#~ msgid "Congratulations!"
+#~ msgstr "Félicitations!"
+
+#~ msgid "The Themosis framework is running."
+#~ msgstr "Le framework Themosis est installé correctement."
+
+#~ msgid "Themosis framework documentation"
+#~ msgstr "Documentation du framework Themosis"
+
+#~ msgid "Hello"
+#~ msgstr "Bonjour"
+
+#~ msgid "Hello from Blade"
+#~ msgstr "Bonjour depuis Blade"

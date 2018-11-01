@@ -306,14 +306,14 @@ class RSS_Widget extends WP_Widget
 
         $esc_number = esc_attr($args['number']);
 
-        // TODO Find a way to echo return a template
+        // TODO Find a way to echo in a template
         if ($inputs['url']) : ?>
             <p class="url">
                 <label for="rss-url-<?php echo $esc_number; ?>"><?php _e('Enter the RSS feed URL here:'); ?></label>
                 <input class="widefat" id="rss-url-<?php echo $esc_number; ?>"
                        name="widget-rss[<?php echo $esc_number; ?>][url]" type="text"
                        value="<?php echo esc_url($this->url); ?>"
-                       disabled />
+                       disabled/>
             </p>
         <?php endif;
         if ($inputs['title']) : ?>
@@ -322,7 +322,7 @@ class RSS_Widget extends WP_Widget
                 <input class="widefat" id="rss-title-<?php echo $esc_number; ?>"
                        name="widget-rss[<?php echo $esc_number; ?>][title]" type="text"
                        value="<?php echo esc_attr($args['title']); ?>"
-                       placeholder="Déphasage – Musiques hors cadres" />
+                       placeholder="Déphasage – Musiques hors cadres"/>
             </p>
         <?php endif;
         if ($inputs['items']) : ?>
@@ -337,8 +337,9 @@ class RSS_Widget extends WP_Widget
         <?php endif;
         if ($inputs['offset']) : ?>
             <p class="offset" style="<?php echo $args['items'] == 1 ? '' : 'display:none;' ?>">
-                <label for="rss-offset-<?php echo $esc_number; ?>"><?php _e('Which item would you like to display?'); ?></label>
-                <select id="rss-offset-<?php echo $esc_number; ?>" name="widget-rss[<?php echo $esc_number; ?>][offset]">
+                <label for="rss-offset-<?php echo $esc_number; ?>"><?php _e('Which item would you like to display?', THEME_TEXTDOMAIN); ?></label>
+                <select id="rss-offset-<?php echo $esc_number; ?>"
+                        name="widget-rss[<?php echo $esc_number; ?>][offset]">
                     <?php $j = 169;
                     for ($i = 0; $i < 20; ++$i) {
                         echo "<option value='$i' " . selected($args['offset'], $i, false) . ">#$j</option>";
@@ -349,26 +350,34 @@ class RSS_Widget extends WP_Widget
         <?php endif;
         if ($inputs['show_image']) : ?>
             <p>
-                <input id="rss-show-image-<?php echo $esc_number; ?>" name="widget-rss[<?php echo $esc_number; ?>][show_image]" type="checkbox" value="1" <?php checked( $args['show_image'] ); ?>/>
-                <label for="rss-show-image-<?php echo $esc_number; ?>"><?php _e( 'Display item image?' ); ?></label>
+                <input id="rss-show-image-<?php echo $esc_number; ?>"
+                       name="widget-rss[<?php echo $esc_number; ?>][show_image]" type="checkbox"
+                       value="1" <?php checked($args['show_image']); ?>/>
+                <label for="rss-show-image-<?php echo $esc_number; ?>"><?php _e('Display item image?', THEME_TEXTDOMAIN); ?></label>
             </p>
         <?php endif;
         if ($inputs['show_player']) : ?>
             <p>
-                <input id="rss-show-player-<?php echo $esc_number; ?>" name="widget-rss[<?php echo $esc_number; ?>][show_player]" type="checkbox" value="1" <?php checked( $args['show_player'] ); ?>/>
-                <label for="rss-show-player-<?php echo $esc_number; ?>"><?php _e( 'Display item player?' ); ?></label>
+                <input id="rss-show-player-<?php echo $esc_number; ?>"
+                       name="widget-rss[<?php echo $esc_number; ?>][show_player]" type="checkbox"
+                       value="1" <?php checked($args['show_player']); ?>/>
+                <label for="rss-show-player-<?php echo $esc_number; ?>"><?php _e('Display item player?', THEME_TEXTDOMAIN); ?></label>
             </p>
         <?php endif;
         if ($inputs['show_list']) : ?>
             <p>
-                <input id="rss-show-list-<?php echo $esc_number; ?>" name="widget-rss[<?php echo $esc_number; ?>][show_list]" type="checkbox" value="1" <?php checked( $args['show_list'] ); ?>/>
-                <label for="rss-show-list-<?php echo $esc_number; ?>"><?php _e( 'Display item playlist?' ); ?></label>
+                <input id="rss-show-list-<?php echo $esc_number; ?>"
+                       name="widget-rss[<?php echo $esc_number; ?>][show_list]" type="checkbox"
+                       value="1" <?php checked($args['show_list']); ?>/>
+                <label for="rss-show-list-<?php echo $esc_number; ?>"><?php _e('Display item playlist?', THEME_TEXTDOMAIN); ?></label>
             </p>
         <?php endif;
         if ($inputs['show_content']) : ?>
             <p>
-                <input id="rss-show-text-<?php echo $esc_number; ?>" name="widget-rss[<?php echo $esc_number; ?>][show_content]" type="checkbox" value="1" <?php checked($args['show_content']); ?>/>
-                <label for="rss-show-text-<?php echo $esc_number; ?>"><?php _e( 'Display item content?' ); ?></label>
+                <input id="rss-show-text-<?php echo $esc_number; ?>"
+                       name="widget-rss[<?php echo $esc_number; ?>][show_content]" type="checkbox"
+                       value="1" <?php checked($args['show_content']); ?>/>
+                <label for="rss-show-text-<?php echo $esc_number; ?>"><?php _e('Display item content?', THEME_TEXTDOMAIN); ?></label>
             </p>
         <?php endif;
         foreach (array_keys($default_inputs) as $input) :
