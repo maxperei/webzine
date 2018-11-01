@@ -9,6 +9,7 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     rename = require('gulp-rename'),
     sass = require('gulp-sass'),
+    flatten = require('gulp-flatten'),
     sourcemaps = require('gulp-sourcemaps'),
     stylus = require('gulp-stylus'),
     uglify = require('gulp-uglify'),
@@ -58,59 +59,12 @@ var errorReport = function(err)
 /*-------*/
 /* Tasks */
 /*-------*/
-// Stylus
-gulp.task('stylus:dev', function()
-{
-    return gulp.src(dirs.src + '/stylus/*.styl')
-        .pipe(plumber({
-            errorHandler: errorReport
-        }))
-        .pipe(sourcemaps.init())
-        .pipe(stylus())
-        .pipe(postcss([autoprefixer({
-            browsers: [
-                "Android 2.3",
-                "Android >= 4",
-                "Chrome >= 20",
-                "Firefox >= 24",
-                "Explorer >= 8",
-                "iOS >= 6",
-                "Opera >= 12",
-                "Safari >= 6"
-            ]
-        }), flexibility()]))
-        .pipe(cleancss())
-        .pipe(rename({
-            suffix: '.min'
-        }))
-        .pipe(sourcemaps.write('./maps'))
-        .pipe(gulp.dest(dirs.dest + '/css'))
+// Fonts
+gulp.task('fonts', function() {
+    return gulp.src(dirs.src + '/fonts/**/*')
+        .pipe(flatten())
+        .pipe(gulp.dest(dirs.dest + '/fonts'))
         .pipe(bs.stream());
-});
-
-gulp.task('stylus', function()
-{
-    return gulp.src(dirs.src + '/stylus/*.styl')
-        .pipe(stylus({
-            compress: true
-        }))
-        .pipe(postcss([autoprefixer({
-            browsers: [
-                "Android 2.3",
-                "Android >= 4",
-                "Chrome >= 20",
-                "Firefox >= 24",
-                "Explorer >= 8",
-                "iOS >= 6",
-                "Opera >= 12",
-                "Safari >= 6"
-            ]
-        }), flexibility()]))
-        .pipe(cleancss())
-        .pipe(rename({
-            suffix: '.min'
-        }))
-        .pipe(gulp.dest(dirs.dest + '/css'));
 });
 
 // Sass
@@ -238,7 +192,7 @@ gulp.task('watch', function()
         https: false
     });
 
-    gulp.watch(dirs.src + '/stylus/**/*.styl', gulp.series('stylus:dev'));
+    gulp.watch(dirs.src + '/fonts/**/*', gulp.series('fonts'));
     gulp.watch(dirs.src + '/styles/**/*.scss', gulp.series('sass:dev'));
     gulp.watch(dirs.src + '/js/**/*.js', gulp.series('webpack:dev')).on('change', bs.reload);
 });
@@ -246,4 +200,4 @@ gulp.task('watch', function()
 /*------------*/
 /* Build task */
 /*------------*/
-gulp.task('build', gulp.series('sass', 'webpack'));
+gulp.task('build', gulp.series('fonts', 'sass', 'webpack'));

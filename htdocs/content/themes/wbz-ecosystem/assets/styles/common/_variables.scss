@@ -1,10 +1,48 @@
 /** Import Bootstrap functions */
 @import "../../components/bootstrap/scss/functions";
 
+//
+// Color system
+//
+
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
+
+$spacer: 1rem !default;
+
 $primary: #dfdaf1;
+
 $theme-colors: (
   primary: $primary
 );
+
+$font-family-base: 'WalbaumGrotesk', sans-serif;
+$font-family-serif: 'Walbaum', serif;
+
+$font-weight-bold: 700;
+$font-weight-base: 400;
+$font-weight-light: 100;
+
+$font-feature-settings: "zero", "ss01", "ss02", "ss03", "ss04", "ss05", "liga" 0;
+
+$headings-margin-bottom: 0;
+$headings-font-family: inherit !default;
+$headings-font-weight: 700;
+$headings-line-height: 1.1;
+
+$body-bg: $gray-100;
+$body-color: $black;
+
+$enable-caret: true;
 
 /** Bootstrap navbar fix (https://git.io/fADqW) */
 $navbar-dark-toggler-icon-bg: none;

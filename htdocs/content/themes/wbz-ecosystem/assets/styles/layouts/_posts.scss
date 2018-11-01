@@ -1,0 +1,23 @@
+article {
+  header {
+    @extend .mb-1;
+    .entry-title { }
+    .entry-meta {
+      font-size: 1.1em;
+      line-height: 1.15em;
+      font-variant: small-caps;
+    }
+  }
+  .entry-summary {
+    font-size: 1.2em;
+    line-height: 1.2em;
+    .moretag {
+      font-size: 1.15em;
+      line-height: 1em;
+      vertical-align: bottom;
+    }
+    &:hover .moretag {
+      font-weight: bold;
+    }
+  }
+}

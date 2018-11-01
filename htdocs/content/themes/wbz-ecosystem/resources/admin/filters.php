@@ -71,3 +71,10 @@ Filter::add('wp_nav_menu_items', function ($items, $args) {
 
     return $items;
 }, 10, 2);
+
+/**
+ * Add custom "more" link to the_excerpt()
+ */
+Filter::add('excerpt_more', function($more) {
+   return " <span class='moretag'>→</a>";
+});

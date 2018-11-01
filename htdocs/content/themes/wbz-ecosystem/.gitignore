@@ -9,4 +9,6 @@ vendor/
 composer.lock
 package-lock.json
 assets/components/
+assets/fonts/
+assets/styles/components/_fonts.scss
 dist/
