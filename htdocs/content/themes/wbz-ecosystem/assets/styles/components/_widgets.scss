@@ -25,6 +25,7 @@ aside.sidebar {
     padding-inline-start: 0;
     list-style-type: none;
     > li {
+      line-height: 1em;
       counter-increment: step-counter;
       padding-right: 1px;
       &:hover {
@@ -66,6 +67,7 @@ aside.sidebar {
     }
   }
   figure {
+    @extend .mb-0;
     img {
       object-fit: cover;
       max-width: 540px;
@@ -74,7 +76,7 @@ aside.sidebar {
       max-height: 150px;
     }
   }
-  p b {
+  p > b {
     cursor: pointer;
     &:hover {
       text-decoration: underline;
@@ -83,14 +85,12 @@ aside.sidebar {
   iframe {
     height: 60px;
     position: relative;
-    top: -16px;
   }
   .rss-summary {
-    .rss-base {
-
-    }
+    .rss-base {}
     .rss-content {
       .rss-author {
+        @extend .mb-1;
         font: {
           size: $font-size-base;
         }
@@ -103,16 +103,17 @@ aside.sidebar {
           }
         }
         &--open:after {
-          content: '-';
+          content: '–';
           float: right;
         }
       }
       .rss-text {
         display: none;
         font: {
-          size: $font-size-sm;
           weight: $font-weight-light;
         }
+        line-height: 1.1em;
+        text-align: justify;
       }
     }
   }

@@ -20,8 +20,8 @@ let texts = [];
 })();
 
 function toggleText(t, p, b) {
-    let plus = $(t).text().replace(/\-/g, '+');
-    let minus = $(t).text().replace(/\+/g, '-');
+    let plus = $(t).text().replace(/–/g, '+');
+    let minus = $(t).text().replace(/\+/g, '–');
     return p.is(':visible') ? b.text(minus) : b.text(plus);
 }
 
