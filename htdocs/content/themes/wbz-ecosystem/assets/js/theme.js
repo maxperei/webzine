@@ -1,5 +1,5 @@
-//var $ = require('jquery');
-var angular = require('angular');
+import * as angular from "angular";
+import { UIHeader } from "./modules/ui-header";
 
 var randomProperty = function (obj) {
     var keys = Object.keys(obj);
@@ -21,3 +21,5 @@ myAppModule.controller('WelcomeController', function WelcomeController($scope) {
     $scope.users = webzine.users;
     $scope.user = randomProperty($scope.users);
 });
+
+UIHeader.init(document.querySelector('.banner'));

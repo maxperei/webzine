@@ -1,6 +1,12 @@
 .banner {
-  @extend .mb-3;
   border-bottom: 1px solid theme-color('primary');
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  transition: height 0.3s, background 0.3s;
+  z-index: 1020;
   .nav {
     @extend .d-flex;
     .menu-item {
